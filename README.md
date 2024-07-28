@@ -18,7 +18,7 @@ cd Assessment
 
 composer install
 
-&& import databse in your local from Databse directory make required changes in "settings.php"
+&& import databse in your local from Databse directory && make required changes in "settings.php"
 clear the cache
 drush cr
 
