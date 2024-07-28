@@ -22,14 +22,17 @@ composer install
 clear the cache
 drush cr
 
+### Run the command for admin onetime login
+drush uli admin
+
 ### phpunit Test
 mkdir -p web/sites/simpletest/browser_output && chmod -R 777 web/sites/simpletest
 cp web/core/phpunit.xml.dist web/core/phpunit.xml
-Make the changes in phpunit.xml in the following places. 
+Make the reuired changes in phpunit.xml in the following places. 
 Set the value of SIMPLETEST_BASE_URL with site URL
-Set the value of SIMPLETEST_DB with database details 
+Set the value of SIMPLETEST_DB with database details
 Set the value of BROWSERTEST_OUTPUT_DIRECTORY with full path of the directory
-  Run the pwd command and get fullpath of the directory
+  Run the pwd command and get the fullpath of the directory
 Set the value of BROWSERTEST_OUTPUT_BASE_URL switch site URL for output
 
 
