@@ -1,0 +1,18 @@
+#apar technologies DHL location finder
+apar_technologies_dhl_api.location_finder.form:
+  path: '/location-finder'
+  defaults:
+    _form: '\Drupal\apar_technologies_dhl_api\Form\DHLLocationFinderForm'
+    _title: 'DHL location finder'
+  requirements:
+    _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+# apar technologies DHL Configuration form
+apar_technologies_dhl_api.dhl.config:
+  path: '/admin/config/dhl'
+  defaults:
+    _form: '\Drupal\apar_technologies_dhl_api\Form\DHLConfigurationForm'
+    _title: 'DHL Configuration'
+  requirements:
+    _permission: 'administer site configuration'

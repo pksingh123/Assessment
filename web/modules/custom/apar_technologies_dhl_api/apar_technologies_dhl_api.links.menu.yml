@@ -1,0 +1,5 @@
+apar_technologies_dhl_api.setting_link:
+ title: 'DHL configuration'
+ description: 'DHL Configuration.'
+ route_name: apar_technologies_dhl_api.dhl.config
+ parent: system.admin_config

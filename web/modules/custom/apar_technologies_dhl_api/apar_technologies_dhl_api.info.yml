@@ -1,0 +1,5 @@
+name: 'Apar Ttechnologies DHL API'
+type: module
+description: 'Apar Technologies Assessment to develop for consuming the DHL API and extending its functionalities'
+core_version_requirement: ^10
+package: 'Apar Technologies Assessment(Pksingh)'
