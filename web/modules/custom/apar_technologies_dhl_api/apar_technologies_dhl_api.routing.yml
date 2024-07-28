@@ -6,8 +6,7 @@ apar_technologies_dhl_api.location_finder.form:
     _title: 'DHL location finder'
   requirements:
     _permission: 'access content'
-  options:
-    no_cache: 'TRUE'
+    
 # apar technologies DHL Configuration form
 apar_technologies_dhl_api.dhl.config:
   path: '/admin/config/dhl'

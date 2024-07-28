@@ -1,5 +1,7 @@
-name: 'Apar Ttechnologies DHL API'
+name: 'Apar Technologies DHL API'
 type: module
 description: 'Apar Technologies Assessment to develop for consuming the DHL API and extending its functionalities'
 core_version_requirement: ^10
+php: '>=8.2'
 package: 'Apar Technologies Assessment(Pksingh)'
+configure: 'apar_technologies_dhl_api.dhl.config'

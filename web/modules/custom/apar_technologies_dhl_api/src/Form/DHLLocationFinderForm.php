@@ -81,6 +81,7 @@ class DHLLocationFinderForm extends FormBase {
       '#title' => $this->t('Country'),
       '#default_value' => $form_state->getValue('country', ''),
       '#required' => TRUE,
+      '#description' => $this->t('Enter the country code (e.g., US for United States).'),
     ];
 
     $form['city'] = [
