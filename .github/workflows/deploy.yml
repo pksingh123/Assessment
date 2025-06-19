@@ -1,0 +1,38 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - main    # or production branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.AWS_SSH_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.AWS_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Deploy to AWS EC2
+      run: |
+        rsync -avz --delete \
+          --exclude '.git' \
+          --exclude 'vendor' \
+          ./ ${{ secrets.AWS_USER }}@${{ secrets.AWS_HOST }}:${{ secrets.DEPLOY_PATH }}
+
+    - name: SSH and run post-deploy commands
+      run: |
+        ssh ${{ secrets.AWS_USER }}@${{ secrets.AWS_HOST }} << 'EOF'
+          cd ${{ secrets.DEPLOY_PATH }}
+          composer install --no-dev
+          drush cr
+          drush updb -y
+          drush cim -y
+        EOF
